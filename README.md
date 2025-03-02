@@ -1,7 +1,8 @@
 # retico-rtdetr
-A ReTiCo module for the Real-Time DEtection TRansformer
+A ReTiCo module for the Real-Time DEtection TRansformer.
 
 ### Requirments  
+This module relies on [retico-vision](https://github.com/retico-team/retico-vision).
 - transformers  
 - torch  
 
