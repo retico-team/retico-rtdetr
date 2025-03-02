@@ -46,7 +46,7 @@ debug.stop()
 ```
 ---
 ### Citation
-This module is based on the RT-DETR vision model as introduced by Zhao et. al.
+This module is based on the RT-DETR vision model as introduced by Zhao et al.
 in the paper [DETRs Beat YOLOs on Real-time Object Detection](https://arxiv.org/abs/2304.08069),
 under the [Apache-2.0 license](./LICENSE). For more information about the model and its authors,
 please visit their [GitHub](https://github.com/lyuwenyu/RT-DETR?tab=readme-ov-file).
