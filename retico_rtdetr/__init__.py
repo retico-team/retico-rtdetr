@@ -1,1 +1,1 @@
-from retico_rtdetr.rtdetrv2 import *
+from retico_rtdetr.rtdetr import *
