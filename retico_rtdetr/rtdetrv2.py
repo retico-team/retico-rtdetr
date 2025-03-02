@@ -4,7 +4,6 @@ from collections import deque
 import torch
 from transformers import RTDetrImageProcessor
 from transformers import RTDetrForObjectDetection
-
 import retico_core
 from retico_vision.vision import ImageIU, DetectedObjectsIU
 
