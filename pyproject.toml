@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=80", "setuptools-scm[simple]>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retico-rtdetr"
+dynamic = ["version"]
+dependencies = [
+    "retico-core>=2.0.0",
+    "retico-vision",
+    "transformers",
+    "torch",
+]
+requires-python = ">=3.9"
+authors = [
+    {name = "Porter Rigby"},
+]
+description = "A ReTiCo module for the Real-Time DEtection TRansformer."
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = [
+    "retico",
+    "framework",
+    "incremental",
+    "real-time",
+    "computer vision",
+    "object detection",
+    "rt-detr",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+[project.urls]
+Repository = "https://github.com/retico-team/retico-rtdetr"
+
+[tool.setuptools_scm]
+version_file = "retico_rtdetr/version.py"

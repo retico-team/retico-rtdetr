@@ -1,28 +1,28 @@
 # retico-rtdetr
 A ReTiCo module for the Real-Time DEtection TRansformer.
 
-### Requirments  
-This module relies on [retico-vision](https://github.com/retico-team/retico-vision).  
-- transformers  
-- torch  
+## Installation and Requirements
 
-`pip install transformers torch`  
+To use the RT-DETR module you first need to install the retico-rtdetr package:
+* Install retico-rtdetr:
+```pip install retico-rtdetr```
 
----
+  or, for the latest development version from GitHub:
+```pip install git+https://github.com/retico-team/retico-rtdetr.git```
+
+## Modules
+
+### `RTDETR`
+Subscribes to `ImageIU` and outputs `DetectedObjectsIU` with the bounding boxes of the detected objects. The model is downloaded from Hugging Face and runs on the GPU if one is available, otherwise on the CPU. No IU is sent for images where nothing is detected.
+
+#### Arguments:
+* `model` (str): the model to use, `'r18'` or `'r50'`; defaults to `'r18'`
+* `thresh` (float): the confidence threshold for a detection; defaults to `0.5`
+
 ### Example
+**Note:** The example uses `WebcamModule` from [retico-vision](https://github.com/retico-team/retico-vision) and `DebugModule` from `retico_core`.
+
 ```python
-import sys, os
-
-prefix = '<path-to-retico-module-repositories>'
-
-os.environ['RETICO'] = prefix + "retico-core"
-os.environ['RETICOV'] = prefix + "retico-vision"
-os.environ['RTDETR'] = prefix + "retico-rtdetr"
-
-sys.path.append(os.environ['RETICO'])
-sys.path.append(os.environ['RETICOV'])
-sys.path.append(os.environ['RTDETR'])
-
 from retico_core.debug import DebugModule
 from retico_vision.vision import WebcamModule
 from retico_rtdetr import RTDETR

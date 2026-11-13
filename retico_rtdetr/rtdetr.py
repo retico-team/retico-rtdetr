@@ -41,7 +41,8 @@ class RTDETR(retico_core.AbstractModule):
         self.queue = deque(maxlen=1)
         self._detector_thread_active = False
 
-        self.model.to(torch.device("cuda"))
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model.to(self.device)
 
     def process_update(self, update_message):
         for iu, ut in update_message:
@@ -59,7 +60,7 @@ class RTDETR(retico_core.AbstractModule):
             image = input_iu.payload
 
             model_inputs = self.processor(images=image, return_tensors="pt")
-            model_inputs = model_inputs.to(torch.device("cuda"))
+            model_inputs = model_inputs.to(self.device)
 
             with torch.no_grad():
                 model_outputs = self.model(**model_inputs)

@@ -1,1 +1,3 @@
-from retico_rtdetr.rtdetr import *
+from .rtdetr import *
+
+from .version import __version__
